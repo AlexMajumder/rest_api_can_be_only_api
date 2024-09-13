@@ -1,32 +1,4 @@
 import 'package:flutter/material.dart';
-class ProductListScreen extends StatefulWidget {
-  const ProductListScreen({super.key});
-
-  @override
-  State<ProductListScreen> createState() => _ProductListScreenState();
-}
-
-class _ProductListScreenState extends State<ProductListScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Product List'),
-
-      ),
-      body: ListView.separated(
-    itemCount: 20,
-    itemBuilder: (context, index) {
-      return
-     const ProductItem();
-      },
-    separatorBuilder: (context, index) {
-      return SizedBox(height: 4);
-    },
-    )
-    );
-  }
-}
 
 class ProductItem extends StatelessWidget {
   const ProductItem({
@@ -36,6 +8,9 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8)
+      ),
       tileColor: Colors.white,
       title: Text('Samsung Galaxy S24'),
       subtitle: Column(
