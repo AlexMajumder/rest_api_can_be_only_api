@@ -52,7 +52,7 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
               TextFormField(
                 controller: _productImageTECController,
                 decoration: const InputDecoration(
-                    hintText: 'image rrjj',
+                    hintText: 'image uplode',
                     labelText: 'Product Image'
                 ),
               ),
