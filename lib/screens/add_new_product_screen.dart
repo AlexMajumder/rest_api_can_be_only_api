@@ -48,11 +48,11 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
                     hintText: 'Total Price',
                     labelText: 'Total Price'
                 ),
-              ),
+              ),//jjdj
               TextFormField(
                 controller: _productImageTECController,
                 decoration: const InputDecoration(
-                    hintText: 'Image',
+                    hintText: 'image rrjj',
                     labelText: 'Product Image'
                 ),
               ),
