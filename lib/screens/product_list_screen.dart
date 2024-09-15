@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:rest_api_can_be_only_api/screens/add_new_product_screen.dart';
 
 import '../widgets/product_item.dart';
@@ -10,6 +11,13 @@ class ProductListScreen extends StatefulWidget {
 }
 
 class _ProductListScreenState extends State<ProductListScreen> {
+
+  @override
+  void initState() {
+    getProductList();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +49,15 @@ class _ProductListScreenState extends State<ProductListScreen> {
       ),
     );
   }
+
+  Future<void> getProductList() async {
+    Uri uri = Uri.parse('http://164.68.107.70:6060/api/v1/ReadProduct');
+    Response response = await get(uri);
+    print(response);
+    print(response.statusCode);
+    print(response.body);
+  }
+
 }
 
 
