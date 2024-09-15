@@ -16,6 +16,8 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
   final TextEditingController _productImageTECController = TextEditingController();
   final TextEditingController _productCodeTECController = TextEditingController();
   final TextEditingController _productQuantityTECController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,7 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
+          key: _formKey,
           child: Column(
             children: [
               TextFormField(
@@ -70,6 +73,12 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
                     labelText: 'Quantity'
                 ),
               ),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
+                ),
+                  onPressed: () {} , child: Text('Add Product')),
             ],
           ),
         ),
