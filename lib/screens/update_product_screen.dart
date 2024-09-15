@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AddNewProductScreen extends StatefulWidget {
-  const AddNewProductScreen({super.key});
+class UpdateProductScreen extends StatefulWidget {
+  const UpdateProductScreen({super.key});
 
   @override
-  State<AddNewProductScreen> createState() => _AddNewProductScreenState();
+  State<UpdateProductScreen> createState() => _UpdateProductScreenState();
 }
 
-class _AddNewProductScreenState extends State<AddNewProductScreen> {
+class _UpdateProductScreenState extends State<UpdateProductScreen> {
 
   final TextEditingController _productNameTECController = TextEditingController();
   final TextEditingController _unitPriceTECController = TextEditingController();
@@ -23,7 +23,7 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add New Product'),
+        title: const Text('Update Product'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -78,7 +78,7 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
                 style: ElevatedButton.styleFrom(
                   fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                 ),
-                  onPressed: _ontabAddProduct , child: Text('Add Product')),
+                  onPressed: _ontabAddProduct , child: Text('Update Product')),
             ],
           ),
         ),

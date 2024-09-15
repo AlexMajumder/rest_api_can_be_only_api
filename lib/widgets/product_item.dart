@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rest_api_can_be_only_api/screens/update_product_screen.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({
@@ -23,7 +24,12 @@ class ProductItem extends StatelessWidget {
           Divider(),
           ButtonBar(
             children: [
-              TextButton.icon(onPressed: (){},icon: Icon(Icons.edit), label: Text('Edit')),
+              TextButton.icon(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return UpdateProductScreen();
+                }),
+                );
+              },icon: Icon(Icons.edit), label: Text('Edit')),
               TextButton.icon(onPressed: (){},icon: Icon(Icons.delete), label: Text('Delete',style: TextStyle(color: Colors.red),))
             ],
           )
