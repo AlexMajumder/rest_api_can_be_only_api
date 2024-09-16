@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:rest_api_can_be_only_api/models/product.dart';
 import 'package:rest_api_can_be_only_api/screens/update_product_screen.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({
-    super.key,
+    super.key, required this.product,
   });
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -13,14 +16,14 @@ class ProductItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(8)
       ),
       tileColor: Colors.white,
-      title: Text('Samsung Galaxy S24'),
+      title: Text(product.productName),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Product Code: code'),
-          Text('Product Price: \$200'),
-          Text('Product Quantity: 2'),
-          Text('Total Price: \$400'),
+          Text('Product Code: ${product.productCode}'),
+          Text('Product Price: \$${product.unitPrice}'),
+          Text('Product Quantity: ${product.quantity}'),
+          Text('Total Price: \$${product.totalPrice}'),
           Divider(),
           ButtonBar(
             children: [
