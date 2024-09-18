@@ -6,6 +6,7 @@ import 'package:rest_api_can_be_only_api/screens/add_new_product_screen.dart';
 
 import '../models/product.dart';
 import '../widgets/product_item.dart';
+
 class ProductListScreen extends StatefulWidget {
   const ProductListScreen({super.key});
 
