@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rest_api_can_be_only_api/function/delete.dart';
 import 'package:rest_api_can_be_only_api/models/product.dart';
 import 'package:rest_api_can_be_only_api/screens/update_product_screen.dart';
 import 'package:rest_api_can_be_only_api/screens/product_list_screen.dart.dart';
@@ -33,7 +32,7 @@ class ProductItem extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) {
-                        return UpdateProductScreen();
+                        return UpdateProductScreen(product.id,product.productImage,product.productName,product.productCode,product.unitPrice,product.totalPrice);
                       }),
                     );
                   },

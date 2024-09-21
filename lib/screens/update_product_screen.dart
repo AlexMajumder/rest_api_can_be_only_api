@@ -7,7 +7,7 @@ import '../models/product.dart';
 class UpdateProductScreen extends StatefulWidget {
   const UpdateProductScreen({
     super.key,
-  required this.product});
+  required this.id,this.id,this.productName,this.unitPrice,this.quantity,this.totalPrice,this.createdAt});
 
   @override
   State<UpdateProductScreen> createState() => _UpdateProductScreenState();
@@ -25,7 +25,14 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
 
   bool _inprogress = false;
 
-  final Product product;
+  final String id;
+  final String productName;
+  final String productCode;
+  final String productImage;
+  final String unitPrice;
+  final String quantity;
+  final String totalPrice;
+  final String createdAt;
 
   @override
   Widget build(BuildContext context) {
@@ -40,13 +47,15 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
           child: Column(
             children: [
               TextFormField(
+                initialValue: '$productName',
                 controller: _productNameTECController,
                 decoration: const InputDecoration(
                   hintText: 'Name',
-                  labelText: 'Product Name'
+                  labelText: 'Product Name',
                 ),
               ),
               TextFormField(
+                initialValue: '$unitPrice',
                 controller: _unitPriceTECController,
                 decoration: const InputDecoration(
                     hintText: 'Unit Price',
@@ -54,6 +63,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
                 ),
               ),
               TextFormField(
+                initialValue: '$totalPrice',
                 controller: _totalPriceTECController,
                 decoration: const InputDecoration(
                     hintText: 'Total Price',
@@ -61,6 +71,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
                 ),
               ),//jjdj
               TextFormField(
+                initialValue: '$productImage',
                 controller: _productImageTECController,
                 decoration: const InputDecoration(
                     hintText: 'image uplode',
@@ -68,6 +79,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
                 ),
               ),
               TextFormField(
+                initialValue: '$productCode',
                 controller: _productCodeTECController,
                 decoration: const InputDecoration(
                     hintText: 'Code',
@@ -75,6 +87,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
                 ),
               ),
               TextFormField(
+                initialValue: '$quantity',
                 controller: _productQuantityTECController,
                 decoration: const InputDecoration(
                     hintText: 'Quantity',
