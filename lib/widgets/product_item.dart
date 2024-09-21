@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:rest_api_can_be_only_api/function/delete.dart';
 import 'package:rest_api_can_be_only_api/models/product.dart';
 import 'package:rest_api_can_be_only_api/screens/update_product_screen.dart';
+import 'package:rest_api_can_be_only_api/screens/product_list_screen.dart.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({
@@ -41,7 +43,7 @@ class ProductItem extends StatelessWidget {
                   onPressed: () {
                     MyAlartDialog(context);
                   },
-                  icon: Icon(Icons.delete),
+                  icon: Icon(Icons.delete,color: Colors.red,),
                   label: Text(
                     'Delete',
                     style: TextStyle(color: Colors.red),
@@ -53,21 +55,47 @@ class ProductItem extends StatelessWidget {
     );
   }
 
-  MyAlartDialog(context){
+  MyAlartDialog(context) {
     return showDialog(
         context: context,
-        builder: (BuildContext context){
-          return Expanded(child: AlertDialog(
+        builder: (BuildContext context) {
+          return Expanded(
+              child: AlertDialog(
             title: Text('Confurm!'),
             content: Text('Do you really want to Delete?'),
             actions: [
-              TextButton(onPressed: (){}, child: Text('yes',style: TextStyle(color: Colors.green),)),
-              TextButton(onPressed: (){Navigator.of(context).pop();}, child: Text('No', style: TextStyle(color: Colors.red),)),
+              TextButton(
+                  onPressed: () {
+                    deleteApiFetching(product.id);//delete product
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(
+                    'yes',
+                    style: TextStyle(color: Colors.green),
+                  )),
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(
+                    'No',
+                    style: TextStyle(color: Colors.red),
+                  )),
             ],
-          )
-          );
-        }
-        );
+          ));
+        });
   }
+
+  MySnackBar(message,context){
+    return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message))
+    );
+  }
+
+
+
+
+
+
 
 }
